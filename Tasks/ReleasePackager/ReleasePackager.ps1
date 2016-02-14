@@ -45,18 +45,19 @@ if(-not $nugetPath)
    Write-Host "Not found!" -ForegroundColor Red
    Write-Host "Check if I can find in working directory $PSScriptRoot " -NoNewline
    $nugetPath = FindNuget -searchLoc $PSScriptRoot
+}
 
-   if(-not $nuGetPath)
-   {
-        Write-Host "Try to download from internet.." -NoNewline
-        DownloadFile -source $nugetOriginalUrl -destination $PSScriptRoot\nuget.exe
-        $nugetPath = FindNuget -searchLoc $PSScriptRoot
-        if(-not $nuGetPath)
-        {
-           throw("Can not find Nuget.exe")
-        }
-   }
-} 
+if(-not $nuGetPath)
+{
+   Write-Host "Try to download from internet.." -NoNewline
+   DownloadFile -source $nugetOriginalUrl -destination $PSScriptRoot\nuget.exe
+   $nugetPath = FindNuget -searchLoc $PSScriptRoot
+}
+   
+if(-not $nuGetPath)
+{
+    throw("Can not find Nuget.exe")
+}
    
 Write-Host "Found! Using Nuget binary path: $nugetPath" -ForegroundColor Green
 
