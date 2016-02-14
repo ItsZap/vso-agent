@@ -4,7 +4,7 @@
   "friendlyName": "Release Packager",
   "description": "Create release package with dependencies management as in Nuget",
   "author": "Riwut Libinuko (cakriwut@gmail.com)",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "[More Information](https://github.com/ItsZap/vso-agent/Readme.md)",
   "category": "Utility",
   "visibility": [
     "Build",
@@ -17,34 +17,35 @@
     "Patch": "0"
   },
   "minimumAgentVersion": "1.83.0",
-  "instanceNameFormat": "ReleasePackager $(message)",
+  "instanceNameFormat": "Release Packager $(solution)",
+  "groups":[{
+      "name":"advanced",
+      "displayName":"Advanced",
+      "isExpanded":false
+    }],
   "inputs": [
     {
-      "name": "cwd",
+      "name": "searchPattern",
       "type": "filePath",
-      "label": "Working Directory",
-      "defaultValue": "",
-      "required": false,
-      "helpMarkDown": "Current working directory when ReleasePackager is run."
+      "label": "Path/Pattern to nuspec files",
+      "defaultValue": "**\\*.nuspec",
+      "required": true,
+      "helpMarkDown": "Pattern to search for release nuspec file"
     },
     {
-      "name": "msg",
-      "type": "string",
-      "label": "Message",
-      "defaultValue": "Hello World",
+      "name": "versionByBuild",
+      "type": "boolean",
+      "label": "Use Build number to version the package",
+      "defaultValue": "false",
       "required": true,
-      "helpMarkDown": "Message to echo out"
+      "helpMarkDown": "Will use the build number to version Release package. Under General set the build format to be '$(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)'"
     }
   ],
   "execution": {
-    "Node": {
-      "target": "sample.js",
-      "argumentFormat": ""
-    },
     "PowerShell": {
-      "target": "$(currentDirectory)\\sample.ps1",
+      "target": "$(currentDirectory)\\ReleasePackager.ps1",
       "argumentFormat": "",
-      "workingDirectory": "$(currentDirectory)"
+      "workingDirectory": ""
     }
   }
 }
