@@ -25,12 +25,12 @@
     }],
   "inputs": [
     {
-      "name": "searchPattern",
+      "name": "mainNuspec",
       "type": "filePath",
-      "label": "Path/Pattern to nuspec files",
-      "defaultValue": "**\\*.nuspec",
+      "label": "Path/Pattern to main nuspec",
+      "defaultValue": "$(solution).nuspec",
       "required": true,
-      "helpMarkDown": "Pattern to search for release nuspec file"
+      "helpMarkDown": "Path main release nuspec file"
     },
     {
       "name": "versionByBuild",

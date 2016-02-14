@@ -1,5 +1,5 @@
 param (
-    [string]$searchPattern,
+    [string]$mainNuspec,
     [string]$versionByBuild
 )
 
