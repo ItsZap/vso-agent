@@ -7,8 +7,7 @@ gc $PSScriptRoot\logo.txt
 Write-Host "Entering script $($MyInvocation.MyCommand.Name)"
 Write-Host "Parameter Values"
 foreach($key in $PSBoundParameters.Keys)
-{
-	
+{	
 	Write-Host ("    {0} = {1}" -f $key,$PSBoundParameters[$key])
 }
 Write-Host "Importing modules"
@@ -72,6 +71,45 @@ if(!$mainNuspec)
    throw ("Main nuspec release file must be set")
 }
 
+# Step 0.. Check if using dynamic version from build
+$useBuildVersion = Convert-String $versionByBuild Boolean
+$newVersion = ""
+if($useBuildVersion)
+{
+    Write-Verbose "Reading version number from build"
+    $versionRegex = "\d+\.\d+\.\d+(?:\.\d+)?"
+    if(-not ($env:BUILD_SOURCESDIRECTORY -and $env:BUILD_BUILDNUMBER))
+    {
+        Write-Error "Running outside Visual Studio Agent is unsupported!"
+        Write-Host "Please configure your Visual Studio Agent"
+        exit 1
+    }
+
+    if(-not $env:BUILD_BUILDNUMBER)
+    {
+        Write-Error "BUILD_BUILDNUMBER environment variable is missing"
+        exit 1
+    }
+
+    Write-Verbose "BUILD_BUILDNUMBER: $env:BUILD_BUILDNUMBER"
+
+    $versionInfo = [regex]::matches($env:BUILD_BUILDNUMBER,$versionRegex)
+    switch($versionInfo.Count)
+    {
+       0 {
+           Write-Error "Could not find version number in BUILD_BUILDNUMBER."
+           exit 1
+       }
+       1 {}
+       default {
+          Write-Warning "Found multiple version info in BUILD_BUILDNUMBER"
+          Write-Warning "Assuming first instance is version."
+       }
+    }
+
+    $newVersion = $versionInfo[0]
+    Write-Verbose "Version: $newVersion"
+}
 
 # Step 1. Prepare the tools Nuget.exe
 
@@ -131,10 +169,17 @@ $mainXml.Save($fpathToPackage.FullName)
 # Step 3. Execute Nuget packager
 
 $argsPack = "pack `"$($fpathToPackage.FullName)`" -OutputDirectory `"$outputdir`" ";
-$slnFolder = "C:\"
+
+if($newVersion -ne "")
+{
+    $argsPack = ($argsPack + " -version $newVersion")
+}
+
+$slnFolder = $(Get-ItemProperty -Path $fnameToPackage -Name 'DirectoryName').DirectoryName
 Invoke-Tool -Path $nugetPath -Arguments "$argsPack" -WorkingFolder $slnFolder
 
 # Step 4. Upload Relase package to gallery
 Write-Verbose "**************************"
-
+Write-Verbose "Please use Nuget Publisher Task, to upload to gallery"
+Write-Verbose "**************************"
 Write-Host "Leaving script $($MyInvocation.MyCommand.Name)"
