@@ -1,5 +1,4 @@
-# ItsZap Inc.
-# Visual Studio Online Agent
+Visual Studio Online Agent by **ItsZap Inc.**
 
 ## Overview
 This repo contains Visual Studio Online / Visual Studio Team Service custom build task agent. 
