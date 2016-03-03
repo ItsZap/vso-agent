@@ -25,7 +25,7 @@
       "label": "Path/Pattern to main nuspec",
       "defaultValue": "$(solution).nuspec",
       "required": true,
-      "helpMarkDown": "Path main release nuspec file. The main nuspec file name will determine the partial nuspec. For example, if project.nuspec is the main nuspec, then other.project.nuspec, next.project.nuspec are example of partial nuspec. Those partial nuspec will be merge during the compilation."
+      "helpMarkDown": "Path main release nuspec file. The main nuspec file name will determine the partial nuspec. For example, if project.nuspec is the main nuspec, then other.project.nuspec, next.project.nuspec are example of partial nuspec. Those partial nuspec will be merge during the compilation.[More Information](https://github.com/ItsZap/vso-agent/blob/master/Tasks/ReleasePackager/UserGuide.md)"
     },
     {
       "name": "versionByBuild",
