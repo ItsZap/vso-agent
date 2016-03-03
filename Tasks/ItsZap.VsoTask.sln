@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "ReleasePackager", "ReleasePackager\ReleasePackager.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{AE2989B0-A353-49C4-A044-6DF8BC31C54A}"
 	ProjectSection(SolutionItems) = preProject
 		Assets\ItsZapLabLogo.png = Assets\ItsZapLabLogo.png
@@ -16,17 +14,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleasePackager", "ReleaseP
 		Assets\ReleasePackager\screenshot2.png = Assets\ReleasePackager\screenshot2.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleasePackager", "ReleasePackager", "{9ECF53AF-0592-4FA4-A8F1-53BB9DB855A0}"
+	ProjectSection(SolutionItems) = preProject
+		ReleasePackager\icon.png = ReleasePackager\icon.png
+		ReleasePackager\logo.txt = ReleasePackager\logo.txt
+		ReleasePackager\Readme.md = ReleasePackager\Readme.md
+		ReleasePackager\ReleasePackager.ps1 = ReleasePackager\ReleasePackager.ps1
+		ReleasePackager\task.json = ReleasePackager\task.json
+	EndProjectSection
+EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
