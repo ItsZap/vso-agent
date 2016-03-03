@@ -1,0 +1,68 @@
+{
+    "manifestVersion": 1,
+    "id": "itszap-release-packager",
+    "version": "1.0.1",
+    "name": "Release Packager",
+    "publisher": "itszap",
+    "description":"Create Release Package from multiple projects, so that you can take control of your release process. Creating versioned Release Package has never been this easy!",
+    "icons":{
+            "default":"Assets/ItsZapLabLogo.png"
+        },
+    "public": true,
+    "tags":[ "build", "itszap", "nuget"],
+    "categories" :[ "Build and release" ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "files":[          
+        {
+            "path" :"ReleasePackager"
+        }      
+    ],
+    "contributions":[
+        {
+            "id":"itszap-build-releasepackager",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "description":"Release Packager custom build agent",            
+            "properties":{
+                "name":"ReleasePackager"
+            }
+        }
+    ],
+    "content":{
+        "details":{
+            "path":"ReleasePackager/Readme.md"
+        }
+    },
+    "screenshots": [
+        {
+            "path": "Assets/ReleasePackager/screenshot1.png"
+        },
+        {
+            "path": "Assets/ReleasePackager/screenshot2.png"
+        }
+    ],
+    "links":{
+        "home": {
+            "uri":"https://itszip.azurewebsites.net"
+        },
+        "learn":{
+            "uri":"https://code.msdn.microsoft.com/Progressive-Package-0baf3019"
+        },
+        "support":{
+            "uri":"http://itszap.freshdesk.com"
+        }
+    },
+    "branding":{
+        "color": "#a0c269",
+        "theme": "light"
+    },
+    "scopes":[
+        "vso.code", "vso.build_execute", "vso.packaging"
+    ]
+}
