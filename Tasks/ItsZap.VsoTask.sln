@@ -17,6 +17,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleasePackager", "ReleasePackager", "{9ECF53AF-0592-4FA4-A8F1-53BB9DB855A0}"
 	ProjectSection(SolutionItems) = preProject
 		ReleasePackager\icon.png = ReleasePackager\icon.png
+		ReleasePackager\Initialize.ps1 = ReleasePackager\Initialize.ps1
 		ReleasePackager\logo.txt = ReleasePackager\logo.txt
 		ReleasePackager\Readme.md = ReleasePackager\Readme.md
 		ReleasePackager\ReleasePackager.ps1 = ReleasePackager\ReleasePackager.ps1
