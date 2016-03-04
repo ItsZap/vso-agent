@@ -17,7 +17,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleasePackager", "ReleasePackager", "{9ECF53AF-0592-4FA4-A8F1-53BB9DB855A0}"
 	ProjectSection(SolutionItems) = preProject
 		ReleasePackager\icon.png = ReleasePackager\icon.png
-		ReleasePackager\Initialize.ps1 = ReleasePackager\Initialize.ps1
 		ReleasePackager\logo.txt = ReleasePackager\logo.txt
 		ReleasePackager\Readme.md = ReleasePackager\Readme.md
 		ReleasePackager\ReleasePackager.ps1 = ReleasePackager\ReleasePackager.ps1
@@ -28,7 +27,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseZip", "ReleaseZip", "{F408007B-7865-45A1-A2F4-375CD80EBBB6}"
 	ProjectSection(SolutionItems) = preProject
 		ReleaseZip\icon.png = ReleaseZip\icon.png
-		ReleaseZip\Initialize.ps1 = ReleaseZip\Initialize.ps1
 		ReleaseZip\logo.txt = ReleaseZip\logo.txt
 		ReleaseZip\packaging.json = ReleaseZip\packaging.json
 		ReleaseZip\ReleaseZip.ps1 = ReleaseZip\ReleaseZip.ps1
