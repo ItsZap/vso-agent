@@ -1,0 +1,17 @@
+{
+   "targetroot":"Delivery",
+   "content" : [
+        {
+            "source": "Assets/ReleasePackager/screenshot1.png",
+            "target": "/"
+        },
+        {
+            "source": "Assets/ReleasePackager/screenshot2.png",
+            "target": "/secondfolder"
+        },
+        {
+        	"source" : "Assets/ReleasePackager/screenshot2.png",
+        	"target" : "/screenshot2NewFileName.png"
+        }
+    ]
+}
