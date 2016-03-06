@@ -1,0 +1,68 @@
+{
+    "manifestVersion": 1,
+    "id": "itszap-release-zip",
+    "version": "1.0.1",
+    "name": "Release Zip",
+    "publisher": "itszap",
+    "description":"Create Release Zip from multiple projects, so that you can take control of your release process. Creating Zip Release Package has never been this easy!",
+    "icons":{
+            "default":"Assets/ItsZapLabLogo.png"
+        },
+    "public": true,
+    "tags":[ "build", "itszap", "nuget"],
+    "categories" :[ "Build and release" ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "files":[          
+        {
+            "path" :"ReleaseZip"
+        }      
+    ],
+    "contributions":[
+        {
+            "id":"itszap-build-releasezip",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "description":"Release Zip custom build agent",            
+            "properties":{
+                "name":"ReleaseZip"
+            }
+        }
+    ],
+    "content":{
+        "details":{
+            "path":"ReleaseZip/Readme.md"
+        }
+    },
+    "screenshots": [
+        {
+            "path": "Assets/ReleaseZip/snapshot1.png"
+        },
+        {
+            "path": "Assets/ReleaseZip/snapshot2.png"
+        }
+    ],
+    "links":{
+        "home": {
+            "uri":"https://itszip.azurewebsites.net"
+        },
+        "learn":{
+            "uri":"http://blog.libinuko.com"
+        },
+        "support":{
+            "uri":"http://itszap.freshdesk.com"
+        }
+    },
+    "branding":{
+        "color": "#a0c269",
+        "theme": "light"
+    },
+    "scopes":[
+        "vso.code", "vso.build_execute", "vso.packaging"
+    ]
+}
