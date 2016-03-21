@@ -8,7 +8,7 @@ Current build task agent available:
 1. **Release Packager for Visual Studio Team Service**  
    This extensions contains custom VS Team Service "tasks" (or "build tasks") that will read *.nuspec and *.partial.nuspec file across solutions. The tasks then combine the *.nuspec (main definition file) and *.partial.nuspec (partial definition file) and build a Release Package as a nuget.
 
-2. **Release Zip for Visual Studio Team Service**
+2. **Release Zip for Visual Studio Team Service** 
    This extensions contains custom VS Team Service "tasks" (or "build tasks") that will read JSON configuration file, that define source and structure of desired zip archive. The JSON filename also serve as base filename of the zip output file. For example if you name the configuration, MyPackage.json, then the output zip file will be MyPackage.zip.
 
 
